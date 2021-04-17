@@ -5,7 +5,7 @@ Bradyn Braithwaite 2021
 #include "credentials.h" // contains ssid and pwsd
 #include "index.hpp"     // contains ndx
 
-#include <ESP8266HTTPClient.h> // only used for definitions
+#include <ESP8266HTTPClient.h> // only used for http definitions
 #include <ESP8266WebServer.h>
 #include <ESP8266WiFi.h>
 
@@ -33,7 +33,7 @@ void handleS1() {
         digitalWrite(nodegpio_d2, LOW);
     }
     else {
-        server->send(HTTP_CODE_FORBIDDEN, "text/html", String("pls no hack me :("));
+        server->send(HTTP_CODE_FORBIDDEN, "text/html", String("denied"));
     }
 }
 
