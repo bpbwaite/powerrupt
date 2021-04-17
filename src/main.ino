@@ -23,7 +23,7 @@ void handleNotFound() {
 }
 
 void handleS1() {
-    if (toflastclickr + 5000L > millis()) {
+    if (toflastclickr + 5000L < millis()) {
         toflastclickr = millis();
 
         server->send(HTTP_CODE_OK);
@@ -55,8 +55,5 @@ void setup() {
     server->begin();
 }
 void loop() {
-    while (server->client().connected()) {
-        server->handleClient();
-    }
-    ESP.deepSleep(2 * 1e6); // sleep a couple seconds
+    server->handleClient();
 }
