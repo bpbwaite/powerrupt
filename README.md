@@ -1,2 +1,5 @@
-# powerrupt
-Arduino-Controlled wireless power switch for servers and desktops
+# PowerRupt
+
+ESP-controlled wireless power switcher for servers and desktops
+
+---
