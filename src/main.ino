@@ -55,6 +55,8 @@ void setup() {
     server->begin();
 }
 void loop() {
-    server->handleClient();
-    yield();
+    while (server->client().connected()) {
+        server->handleClient();
+    }
+    ESP.deepSleep(2 * 1e6); // sleep a couple seconds
 }

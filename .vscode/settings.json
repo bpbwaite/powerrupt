@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.m": "matlab",
+        "*.tcc": "cpp",
+        "memory": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "sstream": "cpp",
+        "streambuf": "cpp",
+        "typeinfo": "cpp"
+    }
+}
