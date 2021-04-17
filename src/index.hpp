@@ -6,16 +6,76 @@ const char ndx[] = R"=====(
 
 <head>
     <meta charset="UTF-8" />
+    <title>PC Control Access</title>
 </head>
 <style>
+    body {
+        margin: 5px;
+        background-color: #DDD;
+    }
 
+    .page-container {
+        position: relative;
+        min-height: 100vh;
+    }
+
+    #content-wrap {
+        display: flex;
+        border: none;
+        padding: 60px;
+        padding-bottom: 1rem;
+    }
+
+    .card {
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        user-select: none;
+        min-width: 300px;
+        max-width: 80%;
+        min-height: 400px;
+        max-height: 500px;
+        box-sizing: border-box;
+        flex: 1;
+        color: #EEE;
+        margin: 50px;
+        margin-top: 30px;
+        padding: 35px;
+        box-shadow: 0px 3px 16px -4px rgba(0, 0, 0, 0.75);
+        border-radius: 40px;
+        opacity: 60%;
+        transition: transform 50ms;
+        transition: border-radius 50ms;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        opacity: 80%;
+    }
+
+    .card:active {
+        transform: scale(.96);
+        opacity: 90%;
+    }
 </style>
 
 <body>
+    <div class="page-container">
+        <div id="content-wrap">
+            <div id="bigbutton" class="card" onclick="reqClick()" style="background-color: rgb(11, 119, 38);">
+                <br />
+                <h2>Power On</h2>
+            </div>
+        </div>
+    </div>
     <script>
-
+        function reqClick() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "rclick", true);
+            xhttp.send();
+        }
     </script>
 </body>
+
 
 </html>
 
