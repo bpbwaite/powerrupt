@@ -26,7 +26,7 @@ void handleS1() {
     if (toflastclickr + 5000L < millis()) {
         toflastclickr = millis();
 
-        server->send(HTTP_CODE_OK);
+        server->send(HTTP_CODE_OK, "text/html", String("good"));
 
         digitalWrite(nodegpio_d2, HIGH);
         delay(longpressms);
@@ -56,4 +56,7 @@ void setup() {
 }
 void loop() {
     server->handleClient();
+    if (WiFi.status() != WL_CONNECTED) {
+        ESP.reset();
+    }
 }
