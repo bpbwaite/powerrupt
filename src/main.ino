@@ -10,7 +10,8 @@ Bradyn Braithwaite 2021
 #include <ESP8266WiFi.h>
 
 #define nodegpio_d2 4
-#define longpressms 470
+#define longpressms 470L
+#define spammingms  5050L
 
 ESP8266WebServer *server;
 static unsigned long toflastclickr = 0;
@@ -23,7 +24,7 @@ void handleNotFound() {
 }
 
 void handleS1() {
-    if (toflastclickr + 5000L < millis()) {
+    if (toflastclickr + spammingms < millis()) {
         toflastclickr = millis();
 
         server->send(HTTP_CODE_OK, "text/html", String("good"));
@@ -56,7 +57,4 @@ void setup() {
 }
 void loop() {
     server->handleClient();
-    if (WiFi.status() != WL_CONNECTED) {
-        ESP.reset();
-    }
 }
