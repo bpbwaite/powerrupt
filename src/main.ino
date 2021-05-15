@@ -11,7 +11,7 @@ Bradyn Braithwaite 2021
 
 #define nodegpio_d2 4
 #define longpressms 470L
-#define spammingms  5050L
+#define spammingms  84000L
 
 ESP8266WebServer *server;
 static unsigned long toflastclickr = 0;
