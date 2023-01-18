@@ -1,5 +1,5 @@
 /*
-Bradyn Braithwaite 2021
+B. Braithwaite 2021
 */
 
 #include "credentials.h" // contains ssid and pwsd
